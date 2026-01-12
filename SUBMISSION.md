@@ -36,7 +36,7 @@ The test account was registered using the API endpoint:
 
 ## Production Deoloyment
 
-**Deployed URL**: [https://github.com/shaibal-tiller/Inventory-management-pridesys.git]
+**Deployed URL**: [pridesys-inventory.vercel.app]
 
 ---
 
