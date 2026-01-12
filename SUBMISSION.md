@@ -18,10 +18,10 @@ Email: shaibalshatif@gmail.com
 Password: 78784321Aa@
 ```
 
-
 ### How Credentials Were Created
 
 The test account was registered using the API endpoint:
+
 - **Endpoint**: `POST http://4.213.57.100:3100/api/v1/users/register`
 - **Method**: Via Swagger UI "Try it out" feature
 - **Required Fields**: username, email, password, name
@@ -42,11 +42,10 @@ The test account was registered using the API endpoint:
 
 ## Video Demonstration
 
-**Video URL**: [YOUTUBE_UNLISTED_LINK or GOOGLE_DRIVE_LINK]
-
-
+**Video URL**: [https://drive.google.com/file/d/1Eki_Nwu4ANgJxg-tmbtKWBnhLE1s57_t/view?usp=sharing]
 
 ### Video Contents:
+
 1. Login flow with test credentials
 2. Inventory page - browsing and searching items
 3. Item details page - viewing, editing capabilities
@@ -61,6 +60,7 @@ The test account was registered using the API endpoint:
 ### Pages Implemented ✓
 
 #### 1. Login Page (Required)
+
 - ✅ Username/email and password fields
 - ✅ Form validation
 - ✅ API integration with `/api/v1/users/login`
@@ -71,6 +71,7 @@ The test account was registered using the API endpoint:
 - ✅ Matches Figma design specifications
 
 #### 2. Inventory Page (Required)
+
 - ✅ Fetch and display items list
 - ✅ Server-side search functionality
 - ✅ Pagination support
@@ -81,6 +82,7 @@ The test account was registered using the API endpoint:
 - ✅ Add new item functionality
 
 #### 3. Item Details Page (Required)
+
 - ✅ Fetch item by ID
 - ✅ Display all item fields (name, location, quantity, labels, notes, etc.)
 - ✅ Image gallery with thumbnails
@@ -90,6 +92,7 @@ The test account was registered using the API endpoint:
 - ✅ Tabbed interface (Details, Attachments, Activity)
 
 #### 4. Locations Page (Optional - Implemented)
+
 - ✅ Fetch and display location tree
 - ✅ Hierarchical tree view navigation
 - ✅ Location details panel
@@ -102,6 +105,7 @@ The test account was registered using the API endpoint:
 ## Technical Implementation
 
 ### Required ✓
+
 - ✅ **React 18+**: Using React 18.3.1
 - ✅ **TypeScript**: Full TypeScript implementation
 - ✅ **SPA Routing**: React Router v6
@@ -118,6 +122,7 @@ The test account was registered using the API endpoint:
 - ✅ **Accessibility**: Labels, focus states, keyboard navigation, semantic HTML
 
 ### Recommended (Implemented) ✓
+
 - ✅ **TypeScript**: Complete type safety across the application
 - ✅ **TanStack Query**: For data fetching, caching, and loading states
 - ✅ **Clean Architecture**:
@@ -137,23 +142,27 @@ The test account was registered using the API endpoint:
 ## Code Quality Highlights
 
 ### 1. Component Architecture
+
 - **Modular Design**: Each page refactored into 5-9 smaller components
 - **Single Responsibility**: Components focused on one task
 - **Reusability**: Shared components for modals, tables, forms
 - **Type Safety**: All components have TypeScript interfaces
 
 ### 2. State Management
+
 - **Server State**: TanStack Query for API data with automatic caching
 - **Client State**: Zustand for global auth state
 - **Local State**: React hooks for component-specific state
 
 ### 3. Error Handling
+
 - Error boundaries for component crashes
 - API error handling with user-friendly messages
 - Retry mechanisms for failed requests
 - Loading and empty states throughout
 
 ### 4. Performance
+
 - Lazy loading for routes
 - Optimized re-renders with React Query
 - Debounced search inputs
@@ -164,15 +173,18 @@ The test account was registered using the API endpoint:
 ## API Integration Details
 
 ### Base Configuration
+
 - **API URL**: `http://4.213.57.100:3100`
 - **Base Path**: `/api/v1`
 - **Swagger**: `http://4.213.57.100:3100/swagger/index.html`
 
 ### Proxy Setup
+
 - **Development**: Vite proxy (`/api` → `http://4.213.57.100:3100`)
 - **Production**: Vercel rewrites (configured in `vercel.json`)
 
 ### Authentication Flow
+
 1. User enters credentials on login page
 2. POST to `/api/v1/users/login`
 3. Receive `token` and `attachmentToken`
@@ -181,6 +193,7 @@ The test account was registered using the API endpoint:
 6. Images use `?token=<attachmentToken>` query parameter
 
 ### Endpoints Integrated
+
 - **Auth**: Login
 - **Items**: List, Get, Create, Update, Delete, Upload Attachments
 - **Locations**: List, Tree, Get, Create, Update, Delete
@@ -191,6 +204,7 @@ The test account was registered using the API endpoint:
 ## Design Implementation
 
 ### Figma Accuracy
+
 - ✅ Login page matches reference design exactly
 - ✅ Inventory list with proper spacing and typography
 - ✅ Item details layout as per specifications
@@ -200,6 +214,7 @@ The test account was registered using the API endpoint:
 - ✅ Responsive breakpoints for all layouts
 
 ### UX States
+
 - ✅ **Loading**: Spinner components and skeleton screens
 - ✅ **Empty**: Friendly messages with call-to-action
 - ✅ **Error**: Clear error messages with retry options
@@ -210,11 +225,13 @@ The test account was registered using the API endpoint:
 ## Responsive Design
 
 ### Breakpoints
+
 - **Mobile**: < 640px - Stacked layouts, bottom navigation
 - **Tablet**: 640px - 1024px - Adjusted sidebars, medium spacing
 - **Desktop**: > 1024px - Full layouts, optimal spacing
 
 ### Mobile Optimizations
+
 - Touch-friendly button sizes (min 44x44px)
 - Collapsible sidebars
 - Bottom sheet modals
@@ -237,6 +254,7 @@ The test account was registered using the API endpoint:
 ## How to Run
 
 ### Quick Start
+
 ```bash
 # Install dependencies
 npm install
@@ -248,12 +266,15 @@ npm run dev
 ```
 
 ### Environment Setup
+
 Create `.env` file:
+
 ```env
 VITE_API_BASE_URL=/api
 ```
 
 ### Build for Production
+
 ```bash
 npm run build
 npm run preview
@@ -264,24 +285,28 @@ npm run preview
 ## Testing Instructions
 
 ### Login
+
 1. Navigate to login page
 2. Enter test credentials (see above)
 3. Click "Sign In"
 4. Should redirect to inventory page
 
 ### Inventory Management
+
 1. Browse items in the inventory list
 2. Use search to filter items
 3. Click "Add Item" to create new item
 4. Click on any item to view details
 
 ### Item Operations
+
 1. View item details
 2. Click "Edit" to modify item
 3. Add attachments via "Add Attachment"
 4. Delete item with "Delete" button
 
 ### Location Management
+
 1. Navigate to "Locations" page
 2. Browse location tree
 3. Select location to view details
@@ -292,18 +317,21 @@ npm run preview
 ## Trade-offs & Design Decisions
 
 ### What Went Well
+
 1. **Clean Architecture**: Component breakdown improves maintainability
 2. **Type Safety**: TypeScript catches errors early
 3. **Performance**: React Query eliminates redundant API calls
 4. **UX**: Comprehensive loading and error states
 
 ### Challenges & Solutions
+
 1. **CORS Issues**: Solved with proxy configuration
 2. **Image Authentication**: Handled with attachment token in URLs
 3. **Complex State**: Managed with combination of TanStack Query + Zustand
 4. **Responsive Design**: Tailwind utilities made it straightforward
 
 ### Future Enhancements
+
 1. **Advanced Filtering**: More filter options on inventory page
 2. **Bulk Operations**: Select and operate on multiple items
 3. **Data Export**: CSV/PDF export functionality
@@ -316,23 +344,23 @@ npm run preview
 ## Additional Notes
 
 ### Documentation
+
 - Comprehensive README.md with setup instructions
 - Inline code comments for complex logic
 - JSDoc comments for component props
 - Environment variable documentation
 
 ### Code Quality
+
 - Consistent code style (Prettier/ESLint ready)
 - No console.log statements in production
 - Removed all AI instruction comments
 - Clean git history
 
 ### Browser Compatibility
+
 - Tested on Chrome, Firefox, Safari
 - Mobile testing on iOS and Android
 - Works on latest browser versions
 
 ---
-
-
-
