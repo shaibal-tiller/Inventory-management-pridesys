@@ -79,8 +79,8 @@ export default function LoginPage() {
             </div>
 
             {/* Right Side - Login Form */}
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-between p-8">
-                <div className="w-full max-w-md flex-1 flex flex-col justify-center">
+            <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
+                <div className="w-full max-w-md">
                     {/* App Logo & Title */}
                     <div className="text-center mb-8">
                         <img
@@ -192,17 +192,17 @@ export default function LoginPage() {
                             </a>
                         </p>
                     </div>
-                </div>
 
-                {/* Footer */}
-                <div className="w-full max-w-md text-center mt-8">
-                    <p className="text-xs text-gray-500 mb-2">Version 1.2.4</p>
-                    <div className="flex items-center justify-center gap-1 text-xs text-gray-500">
-                        <a href="#" className="hover:text-gray-700">Help Center</a>
-                        <span>•</span>
-                        <a href="#" className="hover:text-gray-700">Privacy Policy</a>
-                        <span>•</span>
-                        <a href="#" className="hover:text-gray-700">Terms of Service</a>
+                    {/* Footer */}
+                    <div className="text-center mt-8">
+                        <p className="text-xs text-gray-500 mb-2">Version 1.2.4</p>
+                        <div className="flex items-center justify-center gap-1 text-xs text-gray-500">
+                            <a href="#" className="hover:text-gray-700">Help Center</a>
+                            <span>•</span>
+                            <a href="#" className="hover:text-gray-700">Privacy Policy</a>
+                            <span>•</span>
+                            <a href="#" className="hover:text-gray-700">Terms of Service</a>
+                        </div>
                     </div>
                 </div>
             </div>

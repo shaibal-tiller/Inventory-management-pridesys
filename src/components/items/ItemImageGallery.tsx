@@ -57,7 +57,7 @@ export function ItemImageGallery({
                             : 'border-gray-200'
                             }`}
                     >
-                        
+
                         <img
                             src={getImageUrl(imageId)}
                             alt=""
@@ -65,7 +65,7 @@ export function ItemImageGallery({
                         />
                     </button>
                 )}
-                {attachments?.map((att: any) => (
+                {attachments?.filter((att: any) => att.id !== imageId).map((att: any) => (
                     <button
                         key={att.id}
                         onClick={() => onSelectImage(att.id)}

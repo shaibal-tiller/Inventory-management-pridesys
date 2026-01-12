@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MoreVertical, Eye, Edit, Trash2 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
-import { API_BASE_URL } from '../../lib/api';
+import { IMAGE_BASE_URL } from '../../lib/api';
 
 interface Item {
     id: string;
@@ -99,7 +99,7 @@ export function InventoryTable({
                                             <div className="w-10 h-10 bg-purple-100 rounded-lg shrink-0 overflow-hidden">
                                                 {item.thumbnailId ? (
                                                     <img
-                                                        src={`${API_BASE_URL}/v1/items/${item.id}/attachments/${item.thumbnailId}?token=${attachmentToken}`}
+                                                        src={`${IMAGE_BASE_URL}/v1/items/${item.id}/attachments/${item.thumbnailId}?token=${attachmentToken}`}
                                                         className="w-full h-full object-cover"
                                                         alt=""
                                                     />
