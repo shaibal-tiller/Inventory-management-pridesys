@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Package, Plus } from 'lucide-react';
 import { format } from 'date-fns';
 import { IMAGE_BASE_URL } from '../../lib/api';
+import { AuthenticatedImage } from '../common/AuthenticatedImage';
 
 interface LocationItemsListProps {
     items: any[];
@@ -40,7 +41,7 @@ export function LocationItemsList({ items, onAddItem, attachmentToken }: Locatio
                         {/* Item Thumbnail */}
                         <div className="w-12 h-12 bg-purple-100 rounded-lg overflow-hidden shrink-0">
                             {item.thumbnailId ? (
-                                <img
+                                <AuthenticatedImage
                                     src={`${IMAGE_BASE_URL}/v1/items/${item.id}/attachments/${item.thumbnailId}?token=${attachmentToken}`}
                                     className="w-full h-full object-cover"
                                     alt=""

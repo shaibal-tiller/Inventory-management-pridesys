@@ -1,4 +1,5 @@
 import { Package, Plus } from 'lucide-react';
+import { AuthenticatedImage } from '../common/AuthenticatedImage';
 
 interface ItemImageGalleryProps {
     itemId: string;
@@ -32,15 +33,10 @@ export function ItemImageGallery({
             {/* Main Image Display */}
             <div className="bg-gray-100 rounded-lg flex-1 flex items-center justify-center overflow-hidden">
                 {currentImageId ? (
-                    <img
+                    <AuthenticatedImage
                         src={getImageUrl(currentImageId)}
                         alt={itemName}
-                        
                         className="w-full h-full object-contain"
-                        onError={(e) => {
-                            e.currentTarget.style.display = 'none';
-                            e.currentTarget.parentElement!.innerHTML = '<div class="flex items-center justify-center w-full h-full"><svg class="w-24 h-24 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"/></svg></div>';
-                        }}
                     />
                 ) : (
                     <Package className="w-24 h-24 text-gray-300" />
@@ -57,8 +53,7 @@ export function ItemImageGallery({
                             : 'border-gray-200'
                             }`}
                     >
-
-                        <img
+                        <AuthenticatedImage
                             src={getImageUrl(imageId)}
                             alt=""
                             className="w-full h-full object-cover"
@@ -74,7 +69,7 @@ export function ItemImageGallery({
                             : 'border-gray-200'
                             }`}
                     >
-                        <img
+                        <AuthenticatedImage
                             src={getImageUrl(att.id)}
                             alt=""
                             className="w-full h-full object-cover"
