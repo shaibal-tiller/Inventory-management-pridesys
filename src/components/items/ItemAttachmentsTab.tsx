@@ -1,4 +1,5 @@
 import { Paperclip } from 'lucide-react';
+import { AuthenticatedImage } from '../common/AuthenticatedImage';
 
 interface ItemAttachmentsTabProps {
     attachments: any[];
@@ -34,7 +35,7 @@ export function ItemAttachmentsTab({ attachments, getImageUrl, onAddAttachment }
                     className="border border-gray-200 rounded-lg p-3 hover:bg-gray-50 cursor-pointer"
                 >
                     <div className="aspect-square bg-gray-100 rounded-lg mb-2 overflow-hidden">
-                        <img
+                        <AuthenticatedImage
                             src={getImageUrl(att.id)}
                             alt={att.title}
                             className="w-full h-full object-cover"

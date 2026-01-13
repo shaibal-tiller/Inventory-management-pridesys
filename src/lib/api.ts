@@ -10,7 +10,18 @@ const getApiBaseUrl = () => {
   return "/api";
 };
 
+const getImageBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_IMAGE_BASE_URL;
+
+  if (envUrl) {
+    return envUrl;
+  }
+
+  return "/api";
+};
+
 export const API_BASE_URL = getApiBaseUrl();
+export const IMAGE_BASE_URL = getImageBaseUrl();
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -176,6 +187,6 @@ export const api = {
 
   getItemImageUrl: (itemId: string, attachmentId: string) => {
     const token = localStorage.getItem("attachment_token");
-    return `${API_BASE_URL}/v1/items/${itemId}/attachments/${attachmentId}?token=${token}`;
+    return `${IMAGE_BASE_URL}/v1/items/${itemId}/attachments/${attachmentId}?token=${token}`;
   },
 };

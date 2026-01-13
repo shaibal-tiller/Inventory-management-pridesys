@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Activity } from 'lucide-react';
-import { api, API_BASE_URL } from '../lib/api';
+import { api, IMAGE_BASE_URL } from '../lib/api';
 import { useAuthStore } from '../store/authStore';
 import { Layout } from '../components/Layout';
 import { LoadingSpinner } from '../components/LoadingSpinner';
@@ -129,8 +129,10 @@ export default function ItemDetailPage() {
     /**
      * Generates image URL for attachments
      */
-    const getImageUrl = (attachmentId: string) =>
-        `${API_BASE_URL}/v1/items/${item!.id}/attachments/${attachmentId}?token=${attachmentToken}`;
+    const getImageUrl = (attachmentId: string) => {
+        const token = attachmentToken || localStorage.getItem('attachment_token');
+        return `${IMAGE_BASE_URL}/v1/items/${item!.id}/attachments/${attachmentId}?token=${token}`;
+    };
 
     // Handle loading state
     if (isLoading) {
